@@ -1,0 +1,29 @@
+{
+  "name": "freecodecamp-file-metadata-microservice",
+  "version": "0.1.0",
+  "description": "https://www.freecodecamp.com/challenges/file-metadata-microservice",
+  "main": "freecodecamp-file-metadata-microservice.js",
+  "scripts": {
+    "start": "node freecodecamp-file-metadata-microservice.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagrounds/freecodecamp-file-metadata-microservice.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "file",
+    "metadata",
+    "microservice"
+  ],
+  "author": "bagrounds@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bagrounds/freecodecamp-file-metadata-microservice/issues"
+  },
+  "homepage": "https://github.com/bagrounds/freecodecamp-file-metadata-microservice#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6"
+  }
+}
