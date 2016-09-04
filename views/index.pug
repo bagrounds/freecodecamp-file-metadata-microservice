@@ -8,9 +8,7 @@ html
     h1
       a(href=homepage target='_blank')= title
   
-    input(type='file' id='file-chooser')
-
-    p(id='size-display')
-
-    script(src='js/index.js')
+    form(action='/upload', method='post' enctype="multipart/form-data")
+      input(type='file' name='upload' multiple)
+      input(type='submit' value='Send')
 

@@ -8,17 +8,16 @@
   'use strict'
 
   /* imports */
-  var url = require('url');
   var express = require('express')
   var pug = require('pug')
+  var multer = require('multer')
   var pkg = require('./package')
-
+  
   var PORT = process.env.PORT || 8080
   var app = express()
-  var server
+  var upload = multer()
 
   app.set('view engine', 'pug')
-  app.use(express.static('public'))
 
   app.get('/', function (request, response) {
     var locals = {
@@ -31,7 +30,20 @@
     response.render('index', locals)
   })
 
-  server = app.listen(PORT, function () {
+  app.post('/upload', upload.any(), function (request, response) {
+    var files = request.files
+
+    var sizes = files.map(function (file) {
+      return {
+        name: file.originalname,
+        size: file.size
+      }
+    })
+
+    response.json(sizes)
+  })
+
+  app.listen(PORT, function () {
     console.log('Listening on port ' + PORT)
   })
 })()
